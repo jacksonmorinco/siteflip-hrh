@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/training/page": "app/training/page.js",
+  "/flying/special-events/page": "app/flying/special-events/page.js",
+  "/tours/page": "app/tours/page.js"
+}

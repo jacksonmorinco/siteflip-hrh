@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-white text-ink font-body antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3 { @apply font-display; }
+  h4, h5, h6 { @apply font-body font-semibold; }
+}
+
+@layer components {
+  .section-inner {
+    @apply max-w-site mx-auto px-6 lg:px-16;
+  }
+
+  /* ── Eyebrow / label ── */
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.18em] uppercase text-stone;
+  }
+
+  .eyebrow-red {
+    @apply font-mono text-xs tracking-[0.18em] uppercase text-red;
+  }
+
+  /* ── Rule + label combo ── */
+  .labeled-rule {
+    @apply flex items-center gap-4 mb-6;
+  }
+
+  .labeled-rule::before {
+    content: '';
+    @apply block w-12 h-px bg-rule flex-shrink-0;
+  }
+
+  /* ── Editorial prose ── */
+  .prose-editorial {
+    @apply font-body text-ink/75 text-lg leading-[1.85] max-w-prose;
+  }
+
+  .prose-editorial p + p {
+    @apply mt-5;
+  }
+
+  /* ── Buttons — restrained ── */
+  .btn {
+    @apply inline-flex items-center gap-2 font-body font-medium text-base
+           transition-all duration-200;
+  }
+
+  .btn-dark {
+    @apply btn bg-ink text-white px-7 py-3
+           hover:bg-navy;
+  }
+
+  .btn-outline-dark {
+    @apply btn bg-transparent text-ink px-7 py-3
+           border border-ink/30 hover:border-ink hover:bg-ink hover:text-white;
+  }
+
+  .btn-outline-light {
+    @apply btn bg-transparent text-white px-7 py-3
+           border border-white/30 hover:border-white;
+  }
+
+  .btn-text {
+    @apply btn text-ink border-b border-ink/20 pb-0.5
+           hover:border-ink;
+  }
+
+  /* ── Photo frame ── */
+  .photo-frame {
+    @apply relative overflow-hidden bg-mist;
+  }
+
+  /* ── Stat ── */
+  .stat-num {
+    @apply font-display text-5xl font-bold text-ink leading-none;
+  }
+
+  .stat-label {
+    @apply font-mono text-xs tracking-widest uppercase text-stone mt-2;
+  }
+
+  /* ── Nav ── */
+  .nav-item {
+    @apply font-body font-medium text-sm text-white/70
+           hover:text-white transition-colors duration-150;
+  }
+
+  /* ── Card ── */
+  .card {
+    @apply bg-white border border-rule;
+  }
+
+  /* ── Section divider ── */
+  .divider {
+    @apply border-t border-rule;
+  }
+}
+

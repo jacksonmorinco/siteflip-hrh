@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from:    'HRH Website <noreply@hrheli.com>',
         to:      ['flying@hrheli.com'],
-        replyTo: email,
+        reply_to: email,
         subject: `New inquiry from ${name} — ${inquiry || 'General'}`,
         text: `
 Name:    ${name}
